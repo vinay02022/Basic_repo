@@ -1,90 +1,73 @@
-# Test Assignment - Dual Database API
+# Simple Dual Source API
 
-This project demonstrates an API that fetches data from two MongoDB databases (`employees_db` and `products_db`) and returns combined responses.
-
-## Prerequisites
-
-- Node.js (v14 or higher)
-- MongoDB (Make sure MongoDB server is running locally)
-- npm (Node Package Manager)
+A simple Node.js API that provides data from two different sources (employees and products) and returns a combined response.
 
 ## Setup
 
-1. Clone the repository
+1. Clone this repository
 2. Install dependencies:
-   ```bash
+   ```
    npm install
    ```
-3. Make sure MongoDB is running on your local machine (default port: 27017)
-4. Start the server:
-   ```bash
+
+3. Start the server:
+   ```
+   npm start
+   ```
+   Or for development with auto-reload:
+   ```
    npm run dev
    ```
 
-The server will start on port 3000 by default.
+4. Test the API:
+   ```
+   npm test
+   ```
 
-## API Endpoints
+## API Endpoint
 
-### Employees
+The API has one main endpoint that returns data from both sources in a combined format:
 
-- **GET /api/employees** - Get all employees
-- **POST /api/employees** - Add a new employee
-  ```json
-  {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "position": "Developer",
-    "department": "IT"
-  }
-  ```
+- **GET /api/data**: Returns all employees and products in a combined response
 
-### Products
+## Example Response
 
-- **GET /api/products** - Get all products
-- **POST /api/products** - Add a new product
-  ```json
-  {
-    "name": "Product Name",
-    "description": "Product Description",
-    "price": 99.99,
-    "category": "Electronics",
-    "inStock": true
-  }
-  ```
-
-### Combined Data
-
-- **GET /api/combined** - Get both employees and products data with summary
-  ```json
-  {
-    "employees": [...],
-    "products": [...],
-    "summary": {
-      "totalEmployees": 10,
-      "totalProducts": 20
+```json
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "position": "Senior Developer",
+      "department": "Engineering",
+      "salary": 85000
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "position": "Product Manager",
+      "department": "Product",
+      "salary": 90000
     }
-  }
-  ```
-
-## Testing
-
-You can use tools like Postman or curl to test the API endpoints. The server will respond with appropriate HTTP status codes and JSON data.
-
-## Database Structure
-
-### employees_db
-- Collection: employees
-  - name (String)
-  - email (String, unique)
-  - position (String)
-  - department (String)
-  - joinDate (Date)
-
-### products_db
-- Collection: products
-  - name (String)
-  - description (String)
-  - price (Number)
-  - category (String)
-  - inStock (Boolean)
-  - createdAt (Date) "# Basic_repo" 
+  ],
+  "products": [
+    {
+      "id": "101",
+      "name": "Laptop Pro",
+      "description": "High-performance laptop for professionals",
+      "price": 1299.99,
+      "category": "Electronics",
+      "createdBy": "john.doe@example.com"
+    },
+    {
+      "id": "102",
+      "name": "Smartphone X",
+      "description": "Latest smartphone with advanced features",
+      "price": 899.99,
+      "category": "Electronics",
+      "createdBy": "jane.smith@example.com"
+    }
+  ]
+} 
