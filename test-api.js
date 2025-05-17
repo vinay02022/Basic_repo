@@ -2,7 +2,7 @@ const http = require('http');
 
 // Configuration
 const host = 'localhost';
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // Test function
 async function testAPI() {

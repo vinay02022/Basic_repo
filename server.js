@@ -1,9 +1,9 @@
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const app = express();
+// Use environment variable PORT or default to 5000 for local development
+// Render will provide its own PORT environment variable
 const PORT = process.env.PORT || 5000;
 
 // Middleware
@@ -51,7 +51,7 @@ const productsData = [
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('Dual Source API is running');
+  res.send('Dual Source API is running successfully!');
 });
 
 // Combined API endpoint
@@ -64,5 +64,5 @@ app.get('/api/data', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 }); 

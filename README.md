@@ -24,6 +24,17 @@ A simple Node.js API that provides data from two different sources (employees an
    npm test
    ```
 
+## Deployment on Render
+
+This application is ready to deploy on Render:
+
+1. Create a new Web Service in Render
+2. Connect your GitHub repository
+3. Use the following settings:
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+   - **Node Version**: 14 or higher
+
 ## API Endpoint
 
 The API has one main endpoint that returns data from both sources in a combined format:
