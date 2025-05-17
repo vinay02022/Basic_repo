@@ -1,5 +1,4 @@
-This project showcases a Node.js API that connects to two MongoDB databases—`employees_db` and `products_db`—to manage and retrieve employee and product data. It supports basic CRUD operations via RESTful endpoints. A combined API endpoint returns both datasets along with a summary. The server runs locally on port 3000 and is tested using tools like Postman or curl.
-As very less time alloted did not created Frontend for this 
+This project showcases a Node.js API that connects to two MongoDB databases—`employees_db` and `products_db`—to manage and retrieve employee and product data. It supports basic CRUD operations via RESTful endpoints. A combined API endpoint returns both datasets along with a summary. The server runs locally on port 3000 and is tested using tools like Postman or curl. also now i have deployed so we can test that as well and As very less time alloted did not created Frontend for this 
 backend Deployed link : https://basic-repo-xbzf.onrender.com
 
 
