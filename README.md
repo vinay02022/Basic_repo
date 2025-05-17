@@ -12,8 +12,8 @@ So here in this i have created the API that fetches data from two MongoDB databa
 - **POST /api/employees** - Add a new employee
   ```json
   {
-    "name": "John Doe",
-    "email": "john@example.com",
+    "name": "Vinay Pandey",
+    "email": "vinay@example.com",
     "position": "Developer",
     "department": "IT"
   }
